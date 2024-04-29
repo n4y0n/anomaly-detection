@@ -33,6 +33,7 @@ run:
 	../bin/main
 
 $(ODIR)/%.o: %.cpp $(DEPS)
+	@mkdir -p $(@D)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 $(BDIR)/main: $(OBJ) $(DEPS)
